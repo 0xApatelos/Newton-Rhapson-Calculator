@@ -3,32 +3,27 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package FinalProject;
-import java.lang.Math;
 
 /**
+ * The function implemented by this calculator:
  *
- * @author ASUS
+ * <pre>
+ *   f(x)   = x³ − 2x² + x − 3
+ *   f'(x)  = 3x² − 4x + 1
+ * </pre>
+ *
+ * <p>The polynomial is fixed; the user only chooses the initial guess.</p>
  */
-public class Hitung implements Rumus{
+public class Hitung implements Rumus {
 
     @Override
-    public void Newton(double input) {
-//        System.out.println("method newton di hitung");
-        int i = 1;
-        double a,b,c;
-        
-        a =  Math.pow(input, 3) - 2*Math.pow(input, 2) + input - 3;
-        b = 3*Math.pow(input, 2) - 4*input + 1;
-        c = input;
-        
-        input = c - a/b;
-        
-        HomeFrame.h1 = Double.toString(a);
-        HomeFrame.h2 = Double.toString(b);
-        HomeFrame.h3 = Double.toString(input);
-        HomeFrame.i = Integer.toString(i);
-        
-        
+    public double f(double x) {
+        // x*x*x instead of Math.pow(x, 3): faster and more accurate.
+        return x * x * x - 2 * x * x + x - 3;
     }
-    
+
+    @Override
+    public double fPrime(double x) {
+        return 3 * x * x - 4 * x + 1;
+    }
 }
