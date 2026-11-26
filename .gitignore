@@ -1,0 +1,20 @@
+# NetBeans / Ant build output
+build/
+dist/
+nbproject/private/
+
+# Compiled classes
+*.class
+
+# Crash logs
+hs_err_pid*.log
+replay_pid*.log
+
+# IDE / OS noise
+.idea/
+*.iml
+.vscode/
+.DS_Store
+
+# Logs
+*.log
